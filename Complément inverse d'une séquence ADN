@@ -1,0 +1,24 @@
+sequence = input("Entre une séquence ADN : ").strip().upper()
+# dictionnaire des complémentarités
+complements = {
+    "A": "T",
+    "T": "A",
+    "C": "G",
+    "G": "C",
+    "N": "N"  
+}
+
+complement_inverse = ""
+erreur = False
+
+# on parcourt la séquence à l'envers
+for base in sequence[::-1]:
+    if base in complements:
+        complement_inverse += complements[base]
+    else:
+        print("Attention : caractère non reconnu ->", base)
+        erreur = True
+        break
+
+if not erreur:
+    print("Complément inverse :", complement_inverse)
