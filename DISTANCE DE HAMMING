@@ -1,0 +1,11 @@
+s1 = input("Séquence 1 (même longueur) : ").strip().upper()
+s2 = input("Séquence 2 (même longueur) : ").strip().upper()
+
+if len(s1) != len(s2):
+    print("Pas la même longueur donc je ne peux pas calculer.")
+else:
+    diff = 0
+    for a, b in zip(s1, s2):
+        if a != b:
+            diff += 1
+    print("Distance de Hamming =", diff)
