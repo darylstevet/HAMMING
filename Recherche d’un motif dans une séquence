@@ -1,0 +1,16 @@
+genome = input("Entre la séquence ADN : ").strip().upper()
+motif = input("Entre le motif à rechercher : ").strip().upper()
+
+positions = []
+taille = len(motif)
+
+# on parcourt la séquence
+for i in range(len(genome) - taille + 1):
+    if genome[i:i+taille] == motif:
+        positions.append(i)
+
+# affichage du résultat
+if len(positions) > 0:
+    print("Motif trouvé aux positions :", positions)
+else:
+    print("Le motif n'a pas été trouvé dans la séquence.")
